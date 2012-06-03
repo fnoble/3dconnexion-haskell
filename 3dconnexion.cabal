@@ -1,0 +1,25 @@
+name:                3dconnexion
+version:             0.1
+synopsis:            Drivers for 3Dconnexion devices
+homepage:            http://github.com/fnoble/3dconnexion-haskell
+license:             BSD3
+license-file:        LICENSE
+author:              Fergus Noble
+maintainer:          fergusnoble@gmail.com
+category:            System
+build-type:          Simple
+cabal-version:       >=1.8
+
+library
+  exposed-modules: Input.H3DConnexion
+  if os(darwin)
+    buildable: True
+  else
+    buildable: False
+  frameworks: 3DconnexionClient, Carbon
+  C-sources: cbits/c_3dconn.c
+  include-dirs: cbits
+  extra-libraries: pthread
+
+  build-depends:
+    base
