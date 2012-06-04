@@ -20,6 +20,16 @@ library
   C-sources: cbits/c_3dconn.c
   include-dirs: cbits
   extra-libraries: pthread
-
+  ghc-options: -threaded
   build-depends:
     base
+
+executable test
+  main-is: Test.hs
+  ghc-options: -threaded
+  build-depends:
+    base,
+    3dconnexion,
+    GLUT,
+    OpenGL
+
