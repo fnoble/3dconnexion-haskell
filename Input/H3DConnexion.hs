@@ -12,7 +12,8 @@ module Input.H3DConnexion
   , axisU
   , axisV
   , axisW
-  , Event
+  , Event(..)
+  , H3DConn
   ) where
 
 import Foreign.C.Types
